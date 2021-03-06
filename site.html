@@ -5,7 +5,7 @@
     <title>Gamedev Canvas Workshop</title>
     <style>
     	* { padding: 0; margin: 0; }
-    	canvas { background: #eee; display: block; margin: 0 auto; }
+    	canvas { background-color: LightCyan; display: block; margin: 0 auto; }
     </style>
 </head>
 <body>
@@ -13,7 +13,42 @@
 <canvas id="myCanvas" width="480" height="320"></canvas>
 
 <script>
-	// JavaScript code goes here
+	var canvas = document.getElementById("myCanvas");
+	var ctx = canvas.getContext("2d");
+    ctx.strokeStyle = "black";
+	ctx.fillStyle = "white";
+    
+    var x = 20;
+    var y = 0;
+    var dy = 10;
+    var speedInMs = 100;
+    var groundHeight = canvas.height - 80;
+    
+    function drawSnowBall() {
+    	ctx.clearRect(0, 0, canvas.width, groundHeight);
+		ctx.beginPath();
+		ctx.arc(x, y, 10, 0, Math.PI*2, false);   	
+		ctx.fill();
+    	ctx.stroke();
+		ctx.closePath();
+        y += dy;
+        if (y + dy > canvas.height - 80) {
+        	dy = 0;
+        }
+    }
+    
+    function drawGround() {
+    	ctx.rect(-5, groundHeight, canvas.width + 10, canvas.height);
+    	ctx.fill();
+    	ctx.stroke();
+    }
+    
+    drawGround();
+    
+    if (y < groundHeight) {
+    	setInterval(drawSnowBall, speedInMs);
+    }
+    
 </script>
 
 </body>
