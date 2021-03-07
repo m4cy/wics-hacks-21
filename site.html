@@ -46,25 +46,26 @@
                 x = randomX();
                 y = 0;
                 numDropped++;
+                }
             }
-        }
         
         ctx.globalCompositeOperation='destination-over';
         function drawGround() {
             ctx.rect(-5, skyHeight, canvas.width + 10, canvas.height);
             ctx.stroke();
             ctx.fill();
-        }
+            }
 
         function randomX() {
             return dy + Math.random() * (canvas.width - 2*dy);
-        }
+            }
     
         drawGround();
         if (numDropped < 5) {
-        setInterval(drawSnowBall, speedInMs);
+            setInterval(drawSnowBall, speedInMs);
+            setInterval(drawNumDropped, speedInMs);
+            }
         }
-    }
     oneFall();
     
 </script>
