@@ -33,12 +33,13 @@
     ctx.strokeStyle = "black";
     ctx.fillStyle = "white";
     var numDropped = 0;
-    
+
     function drawNumDropped() {
             ctx.font = "16px";
             ctx.fillStyle = "#000000";
             ctx.fillText("Missed Snowballs: "+numDropped, 8, 20);
         }
+        
 
     function oneFall() {
         var dy = 10;
@@ -46,11 +47,16 @@
         var y = 0;
         var speedInMs = 75;    
         var skyHeight = canvas.height - 80;
+        var paddleHeight = 10;
+        var paddleWidth = 75;
+        var paddleX = (canvas.width-paddleWidth) / 2;  
+        var co  
 
         function drawSnowBall() {
             ctx.clearRect(0, 0, canvas.width, skyHeight);
             ctx.beginPath();
-            ctx.arc(x, y, 10, 0, Math.PI*2, false);     
+            ctx.arc(x, y, 10, 0, Math.PI*2, false);
+            ctx.fillStyle = "white";
             ctx.fill();
             ctx.stroke();
             ctx.closePath();
@@ -59,29 +65,48 @@
                 x = randomX();
                 y = 0;
                 numDropped++;
+                if(numDropped == 5) {
+                    alert("GAME OVER");
+                    document.location.reload();
+                    clearInterval(interval);
                 }
             }
+        }
+
+        // function drawPaddle() {
+        //     ctx.beginPath();
+        //     ctx.rect(paddleX, canvas.height-paddleHeight, paddleWidth, paddleHeight);
+        //     ctx.fillStyle = "#0095DD";
+        //     ctx.fill();
+        //     ctx.closePath();
+        // }
+        // drawPaddle();
         
         ctx.globalCompositeOperation='destination-over';
         function drawGround() {
             ctx.rect(-5, skyHeight, canvas.width + 10, canvas.height);
             ctx.stroke();
             ctx.fill();
-            }
+        }
 
         function randomX() {
             return dy + Math.random() * (canvas.width - 2*dy);
-            }
+        }
     
         drawGround();
         if (numDropped < 5) {
-            setInterval(drawSnowBall, speedInMs);
-            setInterval(drawNumDropped, speedInMs);
-            }
+        setInterval(drawSnowBall, speedInMs);
+        setInterval(drawNumDropped, speedInMs);
         }
+    }
     oneFall();
+    drawNumDropped();
     
 </script>
 
+    <audio id="audio" autoplay muted loop>
+        <source src="gameMusic.mp3">
+    </audio>
+    
 </body>
 </html>
