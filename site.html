@@ -20,13 +20,6 @@
     ctx.strokeStyle = "black";
     ctx.fillStyle = "white";
     var numDropped = 0;
-    
-    function drawNumDropped() {
-            ctx.font = "16px Arial";
-            ctx.fillStyle = "#000000";
-            ctx.fillText("Missed Snowballs: "+numDropped, 8, 20);
-        }
-
 
     function drawNumDropped() {
             ctx.font = "16px Arial";
@@ -34,7 +27,6 @@
             ctx.fillText("Missed Snowballs: "+numDropped, 8, 20);
         }
         
-
 
     function oneFall() {
         var dy = 10;
@@ -63,7 +55,6 @@
                     alert("GAME OVER");
                     document.location.reload();
                     clearInterval(interval);
-
                 }
             }
         }
@@ -76,36 +67,24 @@
         //     ctx.closePath();
         // }
         // drawPaddle();
-
-                    
-                
-
         
         ctx.globalCompositeOperation='destination-over';
         function drawGround() {
             ctx.rect(-5, skyHeight, canvas.width + 10, canvas.height);
             ctx.stroke();
             ctx.fill();
-            }
+        }
 
         function randomX() {
             return dy + Math.random() * (canvas.width - 2*dy);
-            }
+        }
     
         drawGround();
         if (numDropped < 5) {
-
         setInterval(drawSnowBall, speedInMs);
-
         setInterval(drawNumDropped, speedInMs);
-
-
-
-
-
-            
-
         }
+    }
     oneFall();
     drawNumDropped();
     
