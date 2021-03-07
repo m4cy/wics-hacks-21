@@ -8,13 +8,93 @@
   <meta name="description" >
   <meta name="author" content="SitePoint">
   <link rel="icon" href="favicon.png">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet">
 
 
-  <link rel="stylesheet" href="css/styles.css?v=1.0">
+<ul class="big-container" >
+	<div class="item">
+		<a href="resources.html">resources</a> </div>
+	<div class="item vert-flex">
+		<div><a class="active" href="index.html">home</a></div>
+
+		<div>
+			<button class = "start" href="site.html">start</button>
+    </div>
+  </div>
+    <div class="item">
+    <a href="https://github.com/m4cy/wics21">github</a>
+    </div>
+  </ul> <!-- end class="big-container" -->
+
 
 </head>
 
-<body>
-  <script src="js/scripts.js"></script>
+<body style = "background-color: #01598F">
+  
 </body>
+
 </html>
+
+
+<style>
+
+  a{
+color:white;
+text-decoration:none;
+  }
+
+.big-container{
+  display:flex;
+  flex-flow:row;
+  justify-content:center;
+  color:white;
+}
+
+.item {
+  float: left;
+  padding-top:12px;
+  padding-bottom: 12px;
+  color: white;
+  text-decoration: none;
+  font-size: 17px;
+  width: 33.33%; 
+  text-align: center;
+  font-family: 'Raleway', sans-serif;
+
+
+}
+
+
+.item:nth-of-type(2){
+  color:white;
+  flex: 3 200px;
+  display: flex;
+  flex-flow: column;
+  align-items:center;
+}
+
+a:hover{
+  color:black;
+}
+
+.active{
+  color:lightblue;
+}
+
+  .start {
+    border-radius:15px;
+    margin-top:80%;
+    color: white;
+    font-family: 'Raleway', sans-serif;
+    font-size: 100px;
+    background-color: transparent;
+    border-color: white;
+    padding:12px 40px;
+  }
+
+.start:hover{
+  background-color:lightblue;
+}
+
+</style>
