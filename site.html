@@ -20,6 +20,12 @@
     ctx.strokeStyle = "black";
     ctx.fillStyle = "white";
     var numDropped = 0;
+    
+    function drawNumDropped() {
+            ctx.font = "16px Arial";
+            ctx.fillStyle = "#000000";
+            ctx.fillText("Missed Snowballs: "+numDropped, 8, 20);
+        }
 
     function oneFall() {
         var dy = 10;
