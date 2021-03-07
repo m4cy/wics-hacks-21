@@ -33,15 +33,16 @@
     		ctx.stroke();
 		ctx.closePath();
         	y += dy;
-        	if (y + dy > canvas.height - 70) {
-        		dy = 0;
-    		}
+//         	if (y + dy > canvas.height - 70) {
+//         		dy = 0;
+//     		}
    	}
-    
+	    
+	ctx.globalCompositeOperation='destination-over';
     	function drawGround() {
     		ctx.rect(-5, skyHeight, canvas.width + 10, canvas.height);
-		ctx.fill();
 		ctx.stroke();
+		ctx.fill();
 	}
     
 	drawGround();
