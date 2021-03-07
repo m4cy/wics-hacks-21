@@ -1,0 +1,120 @@
+
+
+body {
+	margin: 0;
+	padding: 0;
+    height: 100vh;
+    background-color: #01598F;
+}
+
+h1{
+	font-size: 100px;
+}
+
+.App{
+	display: flex;
+	justify-content: space-between;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+	height: 100vh;
+}
+
+.Snowflake{
+	display: inline-block;
+	width: 0.1%;
+	color: #FFFAFA;
+	opacity: 0;
+	font-size: 120px;
+    margin: 0;
+    padding: 0;
+    animation: fall 16s linear infinite;
+    z-index: -1;
+}
+
+@keyframes fall {
+	0% {
+        opacity: 0;
+        z-index:-1;
+	}
+	3% {
+        opacity: 0.9;
+        z-index:-1;
+	}
+
+	90% {
+        opacity: 0.9;
+        z-index:-1;
+	}
+	100% {
+		transform: translate(0, 97vh);
+        opacity: 0;
+        z-index:-1;
+	}
+}
+
+
+  a{
+color:white;
+text-decoration:none;
+  }
+
+.big-container{
+  display:flex;
+  flex-flow:row;
+  justify-content:center;
+  color:white;
+  z-index: 1;
+  position:absolute;
+  width:100%;
+}
+
+.item {
+  float: left;
+  padding-top:20px;
+  padding-bottom: 12px;
+  color: white;
+  text-decoration: none;
+  font-size: 17px;
+  width: 33.33%; 
+  text-align: center;
+  font-family: 'Raleway', sans-serif;
+z-index:1;
+
+}
+
+
+.item:nth-of-type(2){
+  color:white;
+  flex: 3 200px;
+  display: flex;
+  flex-flow: column;
+  align-items:center;
+  z-index:1;
+}
+
+a:hover{
+  color:black;
+}
+
+.active{
+  color:lightblue;
+}
+
+  .start {
+    border-radius:15px;
+    margin-top:80%;
+    color: white;
+    font-family: 'Raleway', sans-serif;
+    font-size: 100px;
+    background-color: transparent;
+    border-color: white;
+    padding:12px 40px;
+    /* position:fixed; */
+    z-index:1;
+  }
+
+.start:hover{
+  background-color:lightblue;
+}
+
