@@ -2,15 +2,28 @@
 <html>
 <head>
     <meta charset="utf-8" />
-    
+    <link rel="stylesheet" href="stylesheet.css">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet">
+
+    <ul class="big-container">
+        <div class="nav">
+            <a href="resources.html">resources</a> </div>
+        <div class="nav">
+            <div><a href="index.html">home</a></div>
+
+        </div>
+        <div class="nav">
+            <a href="https://github.com/m4cy/m4cy.github.io">github</a>
+        </div>
+    </ul> <!-- end class="big-container" -->
     <style>
         * { padding: 0; margin: 0; }
         canvas { background-color: LightCyan; display: block; margin: 0 auto; }
         
     </style>
-    <h1 style="text-align: center;">Let it Snow!</h1>
+    <h2 style="text-align: center;">Let it Snow!</h2>
 </head>
-<body style="background-color:powderblue;">
+<body>
 
 <canvas id="myCanvas" width="480" height="320"></canvas>
 
@@ -22,7 +35,7 @@
     var numDropped = 0;
     
     function drawNumDropped() {
-            ctx.font = "16px Arial";
+            ctx.font = "16px";
             ctx.fillStyle = "#000000";
             ctx.fillText("Missed Snowballs: "+numDropped, 8, 20);
         }

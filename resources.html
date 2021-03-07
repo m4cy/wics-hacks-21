@@ -6,44 +6,54 @@
         <link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet">
 
 
-        <ul class="big-container" >
-            <div class="item vert-flex">
-                <div><a class="active" href=resources.html>resources</a> </div>
-            <div class="item">
-                <a href="homepage.html">home</a> </div>
-            <div class="item">
-                <a href="https://github.com/m4cy/wics21">github</a></div>
-   
+        <ul class="big-container">
+            <div class="nav">
+                <a class = "active" href="resources.html">resources</a> </div>
+            <div class="nav">
+                <div><a href="index.html">home</a></div>
+
+            </div>
+            <div class="nav">
+                <a href="https://github.com/m4cy/m4cy.github.io">github</a>
+            </div>
+        </ul> <!-- end class="big-container" -->
     </head>
 
     <body>
-        <h1>resources</h1>
-        <h3>It is important to fully understand ADHD and neurodivergence beyond stereotypes. Some informative resources:</h3>
+        <audio id="audio" autoplay muted loop>
+            <source src="snowmusic.mp3">
+        </audio>
+        <h2 class="resources">resources</h2>
+        <h3 class="resources">It is important to fully understand ADHD and neurodivergence beyond stereotypes. Some informative resources:</h3>
 
-        <div>
+        <div class="resources">
             <a href="https://www.additudemag.com/why-do-i-procrastinate/">What is ADHD?</a>
             <p></p>
         </div>
 
-        <div>
+        <div class="resources">
             <a href="https://www.additudemag.com/why-do-i-procrastinate/">Procrastination isn't "just being lazy" for people with ADHD</a>
             <p></p>
         </div>
 
-        <div>
+        <div class="resources">
             <a href="https://www.forbes.com/sites/drnancydoyle/2019/11/24/ableism-in-the-workplace-when-trying-harder-doesnt-work/?sh=36a5496715ae">There are a lot of overlooked instances of ableism in everyday society</a>
             <p></p>
         </div>
 
-        <div>
+        <div class="resources">
             <a href="https://medium.com/@anushaefecto/life-with-adhd-explained-by-an-adhder-ecab86f27d68">The reality of ADHD and the inaccuracy to stereotypes</a>
             <p></p>
         </div>
 
-        <div>
+        <div class="resources">
             <a href="https://childmind.org/article/do-video-games-cause-adhd/">Video games do not cause ADHD, but attract kids diagnosed with it</a>
         </div>
+        <div id="root"></div>
 
+        <script src='https://cdnjs.cloudflare.com/ajax/libs/react/16.8.6/umd/react.production.min.js'></script>
+        <script src='https://cdnjs.cloudflare.com/ajax/libs/react-dom/16.8.6/umd/react-dom.production.min.js'></script>
+        <script src="./react-code.js"></script>
 
     </body>
 
