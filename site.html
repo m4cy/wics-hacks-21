@@ -33,13 +33,17 @@
     ctx.strokeStyle = "black";
     ctx.fillStyle = "white";
     var numDropped = 0;
+    var numCaught = 0;
 
     function drawNumDropped() {
-            ctx.font = "16px";
-            ctx.fillStyle = "#000000";
-            ctx.fillText("Missed Snowballs: "+numDropped, 8, 20);
-        }
-        
+        ctx.font = "16px Arial";
+        ctx.fillStyle = "#000000";
+        ctx.fillText("Missed Snowballs: "+numDropped, 8, 20);
+    }
+
+    function drawNumCaught() {
+        ctx.fillText("Caught Snowballs: "+numCaught, 8, 40);
+    }
 
     function oneFall() {
         var dy = 10;
@@ -49,8 +53,7 @@
         var skyHeight = canvas.height - 80;
         var paddleHeight = 10;
         var paddleWidth = 75;
-        var paddleX = (canvas.width-paddleWidth) / 2;  
-        var co  
+        var paddleX = (canvas.width-paddleWidth) / 2;    
 
         function drawSnowBall() {
             ctx.clearRect(0, 0, canvas.width, skyHeight);
@@ -73,19 +76,20 @@
             }
         }
 
-        // function drawPaddle() {
-        //     ctx.beginPath();
-        //     ctx.rect(paddleX, canvas.height-paddleHeight, paddleWidth, paddleHeight);
-        //     ctx.fillStyle = "#0095DD";
-        //     ctx.fill();
-        //     ctx.closePath();
-        // }
-        // drawPaddle();
+        function drawPaddle() {
+            ctx.beginPath();
+            ctx.rect(paddleX, skyHeight, paddleWidth, paddleHeight);
+            ctx.fillStyle = "#000080";
+            ctx.fill();
+            ctx.closePath();
+        }
+        drawPaddle();
         
         ctx.globalCompositeOperation='destination-over';
         function drawGround() {
             ctx.rect(-5, skyHeight, canvas.width + 10, canvas.height);
             ctx.stroke();
+            ctx.fillStyle = "white";
             ctx.fill();
         }
 
@@ -95,8 +99,9 @@
     
         drawGround();
         if (numDropped < 5) {
-        setInterval(drawSnowBall, speedInMs);
-        setInterval(drawNumDropped, speedInMs);
+            setInterval(drawSnowBall, speedInMs);
+            setInterval(drawNumDropped, speedInMs);
+            setInterval(drawNumCaught, speedInMs);
         }
     }
     oneFall();
