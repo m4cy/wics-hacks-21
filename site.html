@@ -46,8 +46,12 @@
                 x = randomX();
                 y = 0;
                 numDropped++;
+                if(numDropped == 5) {
+                    alert("GAME OVER");
+                    document.location.reload();
+                    clearInterval(interval);
+                    }
                 }
-            }
         
         ctx.globalCompositeOperation='destination-over';
         function drawGround() {
